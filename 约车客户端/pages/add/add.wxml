@@ -1,0 +1,87 @@
+
+<!-- 申请用车时间 -->
+<view class="section applyForTime">
+  <view class="name">
+  申请用车时间
+  </view>
+  <view class="content Picker line">
+        <view class="timePicker">
+          <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+            <view class="picker">
+               {{date}}
+            </view>
+          </picker>
+        </view>  <!--datePicker end-->
+        <view class="timePicker">
+          <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+            <view class="picker">
+               {{time}}
+            </view>
+          </picker>
+        </view>  <!--timePicker end-->
+  </view>  <!--Picker end-->
+</view>
+<!-- 申请用车时间 -->
+
+<!-- 申请人 -->
+<view class="section applyer">
+  <view class="name">
+    申请人
+  </view>
+  <view class="content">
+    <input placeholder="申请人姓名" auto-focus/>
+  </view>
+</view>
+<!-- 申请人 -->
+
+<!-- 申请科室 -->
+<view class="section">
+  <view class="name">
+    申请科室
+  </view>
+  <view class="content">
+    <picker bindchange="bindPickerKeshiChange" value="{{index_keshi}}" range="{{array_keshi}}">
+    <view id="keshi">
+      {{array_keshi[index_keshi]}}
+    </view>
+  </picker>
+  </view>
+</view>
+<!-- 申请科室 -->
+
+<!-- 用车类型 -->
+<view class="section">
+  <view class="name">
+    用车类型
+  </view>
+  <view class="content">
+    <picker bindchange="bindPickerYongcheleixingChange" value="{{index_yongcheleixing}}" range="{{array_yongcheleixing}}">
+    <view id="keshi">
+      {{array_yongcheleixing[index_yongcheleixing]}}
+    </view>
+  </picker>
+  </view>
+</view>
+<!-- 用车类型 -->
+
+<!-- 乘车人 -->
+<view class="section passenger">
+  <view class="name">
+    申请人
+  </view>
+  <view class="content">
+    <input placeholder="乘车人姓名" auto-focus/>
+  </view>
+</view>
+<!-- 乘车人 -->
+
+<!-- 乘车人手机号 -->
+<view class="section passengerPhone">
+  <view class="name">
+    乘车人联系方式
+  </view>
+  <view class="content">
+    <input type="digit" placeholder="请输入手机号"/>
+  </view>
+</view>
+<!-- 乘车人手机号 -->

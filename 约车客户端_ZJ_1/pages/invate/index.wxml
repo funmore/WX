@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="section">
+        <input placeholder="这里输入邀请码" bindconfirm="bindButtonTap" auto-focus/>
+    </view>
+</view>

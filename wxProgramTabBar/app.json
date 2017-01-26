@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/add/add",
+    "pages/orders/orders",
+    "pages/account/account"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {  
+   "color": "#a9b7b7",  
+   "selectedColor": "#11cd6e",  
+   "borderStyle":"white",  
+   "list": [{  
+     "selectedIconPath": "images/首页.png",  
+     "iconPath": "images/首页.png",  
+     "pagePath": "pages/index/index",  
+     "text": "首页"  
+   }, {  
+     "selectedIconPath": "images/添加.png",  
+     "iconPath": "images/添加.png",  
+     "pagePath": "pages/add/add",  
+     "text": "添加"
+   }, {  
+     "selectedIconPath": "images/车.png",  
+     "iconPath": "images/车.png",  
+     "pagePath": "pages/orders/orders",  
+     "text": "行程"  
+   },{
+     "selectedIconPath": "images/账户.png",  
+     "iconPath": "images/账户.png",  
+     "pagePath": "pages/account/account",  
+     "text": "账户"  
+   }]  
+ }
+}
