@@ -6,13 +6,19 @@
 }
 .content{
     float:right;
+    margin-right: 10px;
 }
 .timePicker{
-    margin: 5px;
+    margin-left: 10px;
 }
 .section{
 	height: 30px;
 }
-#keshi{
-	margin-right: 20px;
+
+.input{
+	text-align: right;
+}
+.navigator{
+	width: 20px;
+	height: 10px;
 }

@@ -8,7 +8,24 @@ Page({
       offset: 0,
       tStart: false
     },
-    activeTab: 0
+    activeTab: 0,
+    state:'',
+    usetime:0,
+    telephone:0,
+    type:'',
+    manager:'',
+    reason: '',   //补全
+    passenger:'',
+    isweekend:0,
+    isreturn:0,
+    workers:0,
+    applyer:'',
+    keshi:0,                                                    
+    departIndex:0,
+    departLocation:'',
+    destIndex:0,
+    destLocation:'',
+    notes:''
   },
   onLoad:function(options){
    try {
@@ -74,12 +91,34 @@ Page({
     stv.tStart = false;
     this.setData({stv: this.data.stv})
   },
+   _updateSelectedPageData(page){
+          var timestamp = Date.parse(new Date());
+          timestamp = timestamp / 1000;
+          wx.request({
+              url: 'test.php', //正吉url
+              data: {
+                 token:wx.getStorageSync('token'),
+                 t:timestamp,
+                 s:sha1.hex_sha1(app.data.key+timestamp),
+
+                 p:page
+              },
+              header: {
+                  'content-type': 'application/json'
+              },
+              method:'GET',
+              success: function(res) {
+                console.log(res.data)
+              }
+            })
+   },
   _updateSelectedPage(page) {
     let {tabs, stv, activeTab} = this.data;
     activeTab = page;
     this.setData({activeTab: activeTab})
     stv.offset = stv.windowWidth*activeTab;
-    this.setData({stv: this.data.stv})
+    this.setData({stv: this.data.stv});
+    _updateSelectedPageData(page);
   },
   handlerTabTap(e) {
     this._updateSelectedPage(e.currentTarget.dataset.index);

@@ -12,4 +12,11 @@
             </view>
         </view>
     </view>
+    <navigator url="../component-pages/wx-scroll-view/wx-scroll-view" class="widget">
+                        <view class="widget__name">scroll-view</view>
+                        <image class="widget__arrow" src="resources/arrow.png" background-size="cover" />
+                        
+    </navigator>
 </view>
+
+

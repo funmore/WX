@@ -29,7 +29,7 @@
     申请人
   </view>
   <view class="content">
-    <input placeholder="申请人姓名" auto-focus/>
+    <input placeholder="申请人姓名" class="input" bindblur="applyerInput" auto-focus/>
   </view>
 </view>
 <!-- 申请人 -->
@@ -41,7 +41,7 @@
   </view>
   <view class="content">
     <picker bindchange="bindPickerKeshiChange" value="{{index_keshi}}" range="{{array_keshi}}">
-    <view id="keshi">
+    <view>
       {{array_keshi[index_keshi]}}
     </view>
   </picker>
@@ -49,28 +49,50 @@
 </view>
 <!-- 申请科室 -->
 
+<!-- 用车原因 -->
+<view class="section">
+  <view class="name">
+    乘车原因
+  </view>
+  <view class="content">
+    <input placeholder="仿真实验等" class="input" bindblur="reasonInput" auto-focus/>
+  </view>
+</view>
+<!-- 用车原因 -->
+
 <!-- 用车类型 -->
 <view class="section">
   <view class="name">
     用车类型
   </view>
   <view class="content">
-    <picker bindchange="bindPickerYongcheleixingChange" value="{{index_yongcheleixing}}" range="{{array_yongcheleixing}}">
-    <view id="keshi">
-      {{array_yongcheleixing[index_yongcheleixing]}}
+    <picker bindchange="bindPickerYongcheleixingChange" value="{{index_yongCheLeiXing}}" range="{{array_yongCheLeiXing}}">
+    <view>
+      {{array_yongCheLeiXing[index_yongCheLeiXing]}}
     </view>
   </picker>
   </view>
 </view>
 <!-- 用车类型 -->
 
+<!-- 型号助理 -->
+<view class="section" wx:if="{{index_yongCheLeiXing==1}}">
+  <view class="name">
+    型号助理
+  </view>
+  <view class="content">
+    <input placeholder="型号助理姓名" class="input" bindblur="managerInput" auto-focus/>
+  </view>
+</view>
+<!-- 型号助理 -->
+
 <!-- 乘车人 -->
 <view class="section passenger">
   <view class="name">
-    申请人
+    乘车人
   </view>
   <view class="content">
-    <input placeholder="乘车人姓名" auto-focus/>
+    <input placeholder="乘车人姓名" class="input" bindblur="passengerInput"  auto-focus/>
   </view>
 </view>
 <!-- 乘车人 -->
@@ -81,7 +103,138 @@
     乘车人联系方式
   </view>
   <view class="content">
-    <input type="digit" placeholder="请输入手机号"/>
+    <input type="digit" class="input" bindblur="passengerTelInput" placeholder="请输入手机号"/>
   </view>
 </view>
 <!-- 乘车人手机号 -->
+
+<!-- 是否节假日 -->
+<view class="section isOffWorkTime">
+  <view class="name">
+    是否节假日
+  </view>
+  <view class="content">
+    <picker bindchange="bindPickerIsOffWorkTime" value="{{index_isOffWorkTime}}" range="{{array_isOffWorkTime}}">
+    <view>
+      {{array_isOffWorkTime[index_isOffWorkTime]}}
+    </view>
+  </picker>
+  </view>
+</view>
+<!-- 是否节假日 -->
+
+<!-- 出发地 -->
+<view class="section departure">
+  <view class="name">
+    出发地
+  </view>
+  <view class="content">
+    <navigator url="../orderInfo/origin/origin" class="navigator">
+                        <view class="widget__line">tosast</view>
+    </navigator>
+  </view>
+</view>
+<!-- 出发地 -->
+
+<!-- 出发地 -->
+<view class="section departure">
+  <view class="name">
+    出发地
+  </view>
+  <view class="content">
+    <picker bindchange="bindPickerDeparture" value="{{index_departure}}" range="{{array_departure}}">
+    <view>
+      {{array_departure[index_departure]}}
+    </view>
+  </picker>
+  </view>
+</view>
+<!-- 出发地 -->
+
+<!-- 具体出发地 -->
+<view class="section departure" wx:if="{{index_departure==3}}">
+  <view class="name">
+    请输入详细出发地
+  </view>
+  <view class="content">
+    <input placeholder="出发地" class="input" bindblur="departInput" auto-focus/>
+  </view>
+</view>
+<!-- 具体出发地 -->
+
+<!-- 目的地 -->
+<view class="section destination">
+  <view class="name">
+    目的地
+  </view>
+  <view class="content">
+    <picker bindchange="bindPickerDest" value="{{index_dest}}" range="{{array_dest}}">
+    <view>
+      {{array_dest[index_dest]}}
+    </view>
+  </picker>
+  </view>
+</view>
+<!-- 目的地 -->
+
+<!-- 具体目的地 -->
+<view class="section destination" wx:if="{{index_dest==3}}">
+  <view class="name">
+    请输入详细目的地
+  </view>
+  <view class="content">
+    <input placeholder="目的地" class="input" bindblur="destInput" auto-focus/>
+  </view>
+</view>
+<!-- 具体目的地 -->
+
+<!-- 是否往返 -->
+<view class="section destination">
+  <view class="name">
+    是否往返
+  </view>
+  <view class="content">
+    <picker bindchange="bindPickerOneOrTwoWayChange" value="{{index_oneOrTwoWay}}" range="{{array_oneOrTwoWay}}">
+    <view>
+      {{array_oneOrTwoWay[index_oneOrTwoWay]}}
+    </view>
+  </picker>
+  </view>
+</view>
+<!-- 是否往返 -->
+
+<!-- 用工详细需求 -->
+<view class="section workerNeeds">
+  <view class="name">
+    用工详细需求
+  </view>
+  <view class="content">
+    <picker bindchange="bindPickerWorkerNeedsChange" value="{{index_workerNeeds}}" range="{{array_workerNeeds}}">
+    <view>
+      {{array_workerNeeds[index_workerNeeds]}}
+    </view>
+  </picker>
+  </view>
+</view>
+<!-- 用工详细需求 -->
+
+<!-- 申请用车备注 -->
+<view class="section notes">
+  <view class="name">
+    申请用车备注
+  </view>
+  <view class="content">
+    <input placeholder="备注" class="input" bindblur="notesInput" auto-focus/>
+  </view>
+</view>
+<!-- 申请用车备注 -->
+
+<!-- 申请用车按钮-->
+<view class="section">
+  <button type="primary" size="{{primarySize}}"  bindtap="applyForCar"> 申请用车 </button>
+</view>
+<!-- 申请用车按钮 -->
+
+
+
+
